@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterpiece Painting & Remodeling | Fort Worth, TX</title>
+    <style>
+        /* CSS Variables for Premium Theme */
+        :root {
+            --primary-color: #0b192c; /* Deep Navy */
+            --secondary-color: #d4af37; /* Brushed Gold */
+            --text-main: #333333;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-alt: #f4f4f4;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Georgia', serif; /* Serif for premium feel */
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Typography Utilities */
+        .text-center { text-align: center; }
+        .gold-text { color: var(--secondary-color); }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--secondary-color);
+            background: transparent;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-solid {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-solid:hover {
+            background: transparent;
+            color: var(--secondary-color);
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-light);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            display: block;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0b192c 0%, #1a365d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 80px; /* Offset for fixed header */
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: var(--text-light);
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* Stats/Overview Section */
+        .overview {
+            background-color: var(--bg-light);
+            padding: 80px 5%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px;
+            background: var(--bg-alt);
+            border-top: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 100px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title .divider {
+            height: 3px;
+            width: 60px;
+            background-color: var(--secondary-color);
+            margin: 0 auto;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        .stars {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .review-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 5%;
+            background-color: var(--bg-alt);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            padding: 40px;
+            background: var(--bg-light);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .info-group {
+            margin-bottom: 30px;
+        }
+
+        .info-group h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-group p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .contact-cta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-cta h2 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050b14;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding: 30px 5%;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can be replaced with a hamburger menu later */
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-cta {
+                text-align: center;
+                order: -1; /* Puts CTA above info on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            MASTERPIECE
+            <span>Painting & Remodeling</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="gold-text">Elevating Spaces, Defining Craftsmanship</h1>
+            <p>Fort Worth's premier construction, painting, and remodeling specialists serving the greater Dallas-Fort Worth Metropolitan Area.</p>
+            <a href="#contact" class="btn btn-solid">Request a Consultation</a>
+        </div>
+    </section>
+
+    <section id="about" class="overview">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>5.0</h3>
+                <p>Perfect Star Rating</p>
+            </div>
+            <div class="stat-card">
+                <h3>DFW</h3>
+                <p>Metroplex Coverage</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="section-title">
+            <h2 class="gold-text">Client Testimonials</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <p class="review-text">"I recommend this company to anyone who needs work done."</p>
+                <p class="gold-text">- Verified Client</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <p class="review-text">"We are super satisfied customer!"</p>
+                <p class="gold-text">- Verified Client</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-cta">
+                <h2>Ready to transform your property?</h2>
+                <p style="margin-bottom: 30px; color: #555; font-size: 1.1rem;">Contact us today to discuss your vision and schedule your project. Our experts are ready to deliver masterpiece results.</p>
+                <div>
+                    <a href="tel:8323873827" class="btn btn-solid">Call Now: (832) 387-3827</a>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="info-group">
+                    <h4>Address</h4>
+                    <p>5300 Yellowstone Trail</p>
+                    <p>Fort Worth, TX 76137</p>
+                </div>
+                <div class="info-group">
+                    <h4>Service Area</h4>
+                    <p>Dallas-Fort Worth Metropolitan Area</p>
+                </div>
+                <div class="info-group">
+                    <h4>Operating Hours</h4>
+                    <p>Open Daily until 6:00 PM</p>
+                </div>
+                <div class="info-group">
+                    <h4>Direct Contact</h4>
+                    <p>(832) 387-3827</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Masterpiece Painting & Remodeling. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
